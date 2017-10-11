@@ -13,7 +13,7 @@
     </head>
     <body>
         <%
-            int type = 4;
+            int type = 1;
             
             switch(type){
                 case 1:
