@@ -29,7 +29,7 @@ public class modori extends HttpServlet {
      */
     
     String[] myprofile(){
-      String[] data ={"ID：<br>","名前：山崎大夢<br>","生年月日：1993年3月14日<br>","住所：北海道<br>"};
+      String[] data ={"ID：<br>","名前：山崎大夢<br>","生年月日：1994年3月14日<br>","住所：北海道<br>"};
       
       return data;
       
