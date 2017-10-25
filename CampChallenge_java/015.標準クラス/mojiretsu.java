@@ -34,8 +34,8 @@ public class mojiretsu extends HttpServlet {
            
             String name = "山崎大夢";
             
-            out.println(name.length());
-            out.print(name.getBytes().length);
+            out.print("文字数：" + name.length() + "<br>");
+            out.print("バイト数：" + name.getBytes().length);
         }
     }
 
