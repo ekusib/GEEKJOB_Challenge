@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
  *
  * @author guest1Day
  */
-public class genzai extends HttpServlet {
+public class TimeStamp2 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,11 +33,11 @@ public class genzai extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
-            Date now = new Date();
+            Date d = new Date();
             
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日HH時mm分ss秒");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             
-            out.print(sdf.format(now));
+           out.print(sdf.format(d));
         }
     }
 
