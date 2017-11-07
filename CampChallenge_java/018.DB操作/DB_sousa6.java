@@ -50,7 +50,7 @@ public class DB_sousa6 extends HttpServlet {
             db_st_delete = db_con.prepareStatement(profiles_Delete);
             int i = db_st_delete.executeUpdate();
             
-            System.out.print(i);
+            System.out.print("処理件数：" + i);
             
             db_st_select = db_con.prepareStatement(profiles_Select);
             db_data2 = db_st_select.executeQuery();
