@@ -15,33 +15,51 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 課題内容
+ * 前回作成した課題に加えて、そのクラスを継承し
+ * フィールドの値をクリアするメソッドを持ったクラスを作成せよ
+ *
+ * また実行して確認してください
  */
-public class Humankeisho extends HttpServlet {
+public class Humankeisho{
 
-    
+	public static void main(String[] args) {
+
+		Human human = new Human();
+		Clear clear = new clear();
+
+		human.setHuman("山崎", 23);
+		human.printHuman();
+
+		clear.clearhuman();
+		human.printHuman();
+	}
+}
+
+
        //Humanクラスの宣言
 public class Human {
     //フィールドの宣言
     public String name = "";
     public int age = 0;
-    
+
     //メソッドの宣言
    public void setHuman(String n,int a){
        //引数をフィールドへ設定
        this.name = n;
        this.age = a;
    }
-    
+
    public void printHuman(){
-       
+
        System.out.print("氏名" + name + "<br>" + "年齢" + age + "<br>");
    }
 }
 
  class Clear extends Human{
-     
+
      public void clearhuman(){
-         
+
          this.name = "";
          this.age = 0;
      }
@@ -55,7 +73,7 @@ public class Human {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -95,4 +113,4 @@ public class Human {
         return "Short description";
     }// </editor-fold>
 
-}
+

@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 課題内容
+ * 引数が4つ(整数型、整数型、boolean型、PrintWriterクラス)のメソッドを作成
+ * 引数1,2を掛け算し結果を表示
+ * 引数3がtrueなら2乗する
  */
 public class hikisuu2 extends HttpServlet {
 
@@ -27,7 +31,7 @@ public class hikisuu2 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+
     void kake(int num1,int num2,boolean torf,PrintWriter pw){
         int i = num1 * num2;
         pw.print(num1 + "×"+ num2  + "は" + i + "です。<br>");
@@ -37,26 +41,16 @@ public class hikisuu2 extends HttpServlet {
             pw.print("falseのため2乗しません。");
         }
     }
-    void kake(int num1,PrintWriter pw){
-        kake(num1,5,false,pw);
-    }
-    
+
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet hikisuu2</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            
+
+
             kake(2,4,true,out);
-            
-            out.println("</body>");
-            out.println("</html>");
+
         }
     }
 

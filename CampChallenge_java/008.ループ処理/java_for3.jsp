@@ -1,5 +1,5 @@
-<%-- 
-    Document   : java_for3
+<%--
+    Document   : java_for3　1～100を足して結果を表示
     Created on : 2017/10/10, 15:34:30
     Author     : guest1Day
 --%>
@@ -14,15 +14,15 @@
     <body>
        <%
            int a = 0;
-           
+
            for(int i=0;i<=100;i++){
-          
+
                a = a + i;
-              
+
            }
-           
+
             out.print(a);
-            
+
        %>
     </body>
 </html>

@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 課題
+ * 前回の課題に加えて
+ * Integer limit = 2;を追加
+ * このlimitをつかって2人分だけプロフィール情報を表示
  */
 public class hikimodo4 extends HttpServlet {
 
@@ -52,37 +56,34 @@ public class hikimodo4 extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
 
             Integer limit = 2;
-            
+
             for(int i = 1; i <= 3; i++) {
                 String[] profile = myprofile(i);
-                
+
                 if(limit<i){
+
                 break;
-            }else{
 
-            for(int n = 1; n < profile.length; n++){
-                
-            
-                if (profile[n] == null) {
-                    continue;
-                }else{
-                     out.print(profile[n]);
+	            }else{
 
-                }
-                }
-            }
+	            	for(int n = 1; n < profile.length; n++){
 
-//                out.print(profile[1]);
-//
-//                out.print(profile[2]);
-//
-//                out.print(profile[3]);
-            
+
+		                if (profile[n] == null) {
+		                    continue;
+		                }else{
+		                     out.print(profile[n]);
+
+		                }
+	                }
+	            }
+
+
             }
 
         }
     }
-    
+
 
         // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
         /**
@@ -122,7 +123,7 @@ public class hikimodo4 extends HttpServlet {
          */
         @Override
         public String getServletInfo
-        
+
             () {
         return "Short description";
         }// </editor-fold>

@@ -17,6 +17,7 @@ import java.util.Random;
 /**
  *
  * @author guest1Day
+ * サーブレットで占いを行う課題
  */
 public class FortuneTelling extends HttpServlet {
 
@@ -33,18 +34,18 @@ public class FortuneTelling extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-     
-      //大吉・中吉・小吉・吉・半吉・末吉・末小吉・凶・小凶・半凶・末凶・大凶
+
+      //配列 luckList[] に運勢を格納
       String luckList[] = {"大吉","中吉","小吉","吉","半吉","末吉","末小吉","凶","小凶","半凶","末凶","大凶"};
       //乱数クラス生成
       Random rand = new Random();
       //乱数取得
       Integer index = rand.nextInt(luckList.length);
-      
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet FortuneTelling</title>");            
+            out.println("<title>Servlet FortuneTelling</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>あなたの今日の運勢は・・・ " + luckList[index] + "です！</h1>");

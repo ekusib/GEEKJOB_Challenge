@@ -15,18 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 自己紹介をするメソッドを作成し10回呼び出す課題
  */
 public class myplofile extends HttpServlet {
 
-    
+
         //自己紹介を表示するメソッド
     void myprofile(PrintWriter pw){
-        
+
         pw.print("名前:山崎大夢<br>");
         pw.print("生年月日:1994年3月14日<br>");
         pw.print("自己紹介:GEEK JOB キャンプに通いながらプログラマーを目指しています。<br>");
     }
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,7 +41,7 @@ public class myplofile extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+
          for(int i=0;i<10;i++){
              myprofile(out);
          }

@@ -1,5 +1,5 @@
-<%-- 
-    Document   : java_for1
+<%--
+    Document   : java_for1　8の20乗を表示
     Created on : 2017/10/10, 14:46:31
     Author     : guest1Day
 --%>
@@ -14,14 +14,15 @@
     <body>
       <%
           long a = 8;
-          
+
           for(int i=0;i<20;i++){
-             
-              out.println(a);
-              
-               a *= 8;
-              
+
+        	  a *= 8;
+
           }
+
+          out.println(a);
+
       %>
     </body>
 </html>

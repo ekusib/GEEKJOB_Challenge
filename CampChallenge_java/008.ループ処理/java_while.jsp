@@ -1,5 +1,5 @@
-<%-- 
-    Document   : java_while
+<%--
+    Document   : java_while　aが100を下回るまで2で割り続けて表示
     Created on : 2017/10/10, 15:50:11
     Author     : guest1Day
 --%>
@@ -14,11 +14,11 @@
     <body>
       <%
           int a = 1000;
-          
+
           while(a > 100){
-            
+
               out.println(a);
-              
+
               a = a/2;
           }
       %>

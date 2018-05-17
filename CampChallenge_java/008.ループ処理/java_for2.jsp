@@ -1,5 +1,5 @@
-<%-- 
-    Document   : java_ for2
+<%--
+    Document   : java_ for2　String型のaに"A"を30個錬結させて表示
     Created on : 2017/10/10, 15:08:33
     Author     : guest1Day
 --%>
@@ -14,13 +14,13 @@
     <body>
         <%
             String a = "A";
-            
+
             for(int i=0;i<29;i++){
-            
+
              a= a + "A" ;
-                
+
             }
-            
+
            out.print(a);
         %>
     </body>

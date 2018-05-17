@@ -1,5 +1,5 @@
-<%-- 
-    Document   : java_if
+<%--
+    Document   : java_if　if文での分岐
     Created on : 2017/10/10, 11:56:32
     Author     : guest1Day
 --%>
@@ -14,7 +14,7 @@
     <body>
         <%
             int num = 2;
-            
+
             if(num == 1){
                 out.print("1です！");
             }else if(num == 2){

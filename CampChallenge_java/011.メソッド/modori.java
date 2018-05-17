@@ -15,6 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 課題内容
+ * 自分のプロフィールが入った配列を返すメソッドを用意
+ * ID以外の値を表示
  */
 public class modori extends HttpServlet {
 
@@ -27,25 +30,25 @@ public class modori extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
+
     String[] myprofile(){
       String[] data ={"ID：<br>","名前：山崎大夢<br>","生年月日：1994年3月14日<br>","住所：北海道<br>"};
-      
+
       return data;
-      
+
     }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-          
-            
+
+
             out.print(myprofile()[1]);
             out.print(myprofile()[2]);
             out.print(myprofile()[3]);
-            
-        
+
+
         }
     }
 

@@ -20,6 +20,8 @@ import org.camp.servlet.ResultData;
 /**
  *
  * @author guest1Day
+ * サーブレットとJSPの連携
+ * JavaBeansに現在の時間と占い結果をセットしてJSPで表示する課題
  */
 public class FortuneTelling extends HttpServlet {
 
@@ -36,33 +38,27 @@ public class FortuneTelling extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-     
-      //大吉・中吉・小吉・吉・半吉・末吉・末小吉・凶・小凶・半凶・末凶・大凶
+
+      //配列 luckList[] に運勢を格納
       String luckList[] = {"大吉","中吉","小吉","吉","半吉","末吉","末小吉","凶","小凶","半凶","末凶","大凶"};
       //乱数クラス生成
       Random rand = new Random();
       //乱数取得
       Integer index = rand.nextInt(luckList.length);
-      
-          //リクエストスコープへ結果を設定
+
+      //JavaBeansに現在の時間と占い結果をセット
       ResultData data = new ResultData();
       data.setD(new Date());
       data.setLuck(luckList[index]);
+
+      //リクエストスコープへ結果を設定
       request.setAttribute("DATA",data);
 
+      //「WEB-INF/jsp/FortuneTellingResult.jsp」に行き先を指定
       RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/jsp/FortuneTellingResult.jsp");
+      //RequestDispatcherで指定した場所へ移動
       rd.forward(request,response);
-      
-      
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet FortuneTelling</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>あなたの今日の運勢は・・・ " + luckList[index] + "です！</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
         }
     }
 

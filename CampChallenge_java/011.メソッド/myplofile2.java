@@ -15,19 +15,21 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 自己紹介をするメソッドを10回呼び出すのに加えて
+ * 戻り値でtrueが返ってきたら"この処理は正しく実行できました"と表示する課題
  */
 public class myplofile extends HttpServlet {
 
-    
+
         //自己紹介を表示するメソッド
     boolean myprofile(PrintWriter pw){
-        
+
         pw.print("名前:山崎大夢<br>");
         pw.print("生年月日:1994年3月14日<br>");
         pw.print("自己紹介:GEEK JOB キャンプに通いながらプログラマーを目指しています。<br>");
         return true;
     }
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -41,10 +43,11 @@ public class myplofile extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+
          for(int i=0;i<10;i++){
              myprofile(out);
          }
+
          if(myprofile(out)){
              out.print("この処理は正しく実行できました");
          }else{

@@ -1,5 +1,5 @@
-<%-- 
-    Document   : java_2
+<%--
+    Document   : java_2　変数の宣言
     Created on : 2017/10/10, 10:56:37
     Author     : guest1Day
 --%>

@@ -15,6 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 課題内容
+ * 3人のプロフィール情報をもった配列をメソッドに用意、1人の住所情報をnullとする
+ * 引数で受け取った値をIDを比較し、一致するプロフィールを返す
+ * 全員のプロフィール情報を表示する
  */
 public class hikimodo3 extends HttpServlet {
 
@@ -54,29 +58,23 @@ public class hikimodo3 extends HttpServlet {
             for(int i = 1; i <= 3; i++) {
                 String[] profile = myprofile(i);
 
-            for(int n = 1; n < profile.length; n++){
-                
-            
-                if (profile[n] == null) {
-                    continue;
-                }else{
-                     out.print(profile[n]);
+	            for(int n = 1; n < profile.length; n++){
 
-                    
-                }
-            }
 
-//                out.print(profile[1]);
-//
-//                out.print(profile[2]);
-//
-//                out.print(profile[3]);
-            
+	                if (profile[n] == null) {
+	                    continue;
+	                }else{
+	                     out.print(profile[n]);
+
+
+	                }
+	            }
+
             }
 
         }
     }
-    
+
 
         // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
         /**
@@ -116,7 +114,7 @@ public class hikimodo3 extends HttpServlet {
          */
         @Override
         public String getServletInfo
-        
+
             () {
         return "Short description";
         }// </editor-fold>

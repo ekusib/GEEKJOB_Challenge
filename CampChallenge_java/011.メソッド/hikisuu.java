@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author guest1Day
+ * 引数で値を渡して偶数か奇数を判別し表示するメソッドの課題
+ *
  */
 @WebServlet(name = "hikisuu", urlPatterns = {"/hikisuu"})
 public class hikisuu extends HttpServlet {
@@ -32,35 +34,27 @@ public class hikisuu extends HttpServlet {
         //奇数、偶数を判別するメソッド
     //引数を利用して、数値を外から渡します
     void hanbetu(int num,PrintWriter pw){
-        
+
         if( num % 2 == 0){
             pw.print(num + "は偶数です。");
         }else{
             pw.print(num +"は奇数です。");
         }
     }
-    
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            
-    
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet hikisuu</title>");            
-            out.println("</head>");
-            out.println("<body>"); 
-     
-            
+
+
+
+
             hanbetu(41,out);
-        
-        
-         
-            out.println("</body>");
-            out.println("</html>");
+
+
+
+
         }
     }
 
